@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Passagem Segura: Autenticação e Segurança Móvel</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .markmap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .markmap > svg {
+      width: 100%;
+      height: 100vh;
+      display: block;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="markmap">
+    <script type="text/template">
+---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 910
+## Passagem Segura: Autenticação e Segurança Móvel
+
+- Conceitos de Autenticação
+  - Definição: Verificar identidade do usuário
+  - Credenciais: Usuário e senha
+  - Login Social: Google, Facebook, Apple
+  - Biometria: Digital e reconhecimento facial
+  - Tokens: Protocolos criptografados (2FA/MFA)
+
+- Gerenciamento de Sessões
+  - Mecanismos de Armazenamento
+    - Tokens de sessão: Validade curta
+    - Cookies: HTTPS e HttpOnly
+    - Local Storage: Persistência e desempenho
+  - Manutenção da Sessão
+    - Tokens Persistentes: AsyncStorage/SecureStore
+    - Renovação: Refresh Tokens
+    - Interceptadores: Axios (erro 401)
+
+- Processo de Autenticação
+  - Identificação: Coleta de credenciais
+  - Validação: Comparação no servidor via HTTPS
+  - Autorização: Emissão de Token (JWT)
+
+- Ferramentas e Implementação
+  - Firebase Authentication
+    - Configuração: Console e ID do projeto
+    - Métodos: E-mail/senha e Login Social
+    - Gestão: Abas de Usuários, Modelos e Uso
+  - JWT (JSON Web Token)
+    - Estrutura: Cabeçalho, Payload e Assinatura
+    - Vantagem: Compacto e autocontido
+    - Alerta: Dados no payload não são criptografados
+
+- Boas Práticas de Segurança
+  - Criptografia: Uso de HTTPS e SecureStore
+  - Validação no Backend: Nunca confiar no cliente
+  - Logout Seguro: Remoção e invalidação de tokens
+  - MFA: Autenticação multifator
+
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18.12"></script>
+</body>
+</html>

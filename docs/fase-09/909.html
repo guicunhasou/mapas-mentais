@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Memória de Elefante: Persistência e Recursos Nativos</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .markmap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .markmap > svg {
+      width: 100%;
+      height: 100vh;
+      display: block;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="markmap">
+    <script type="text/template">
+---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 909
+## Memória de Elefante: Persistência e Recursos Nativos
+
+- AsyncStorage
+  - O que é
+    - Armazenamento local chave-valor
+    - Operações assíncronas
+    - Persistência entre sessões
+
+  - Operações Básicas
+    - setItem (salvar)
+    - getItem (recuperar)
+    - removeItem (remover)
+
+  - Boas Práticas
+    - Evitar dados sensíveis
+    - Compressão de dados grandes
+    - Limpeza de dados obsoletos
+
+  - Casos de Uso
+    - Configurações de app
+    - Preferências de tema
+    - Estado de login
+    - Cache simples
+
+- Firebase Firestore
+  - Banco NoSQL na nuvem
+  - Sincronização em tempo real
+  - Suporte a modo offline
+  - Escalabilidade para múltiplos dispositivos
+
+- Recursos Nativos
+  - Câmera
+    - react-native-vision-camera
+    - expo-camera
+    - Captura de fotos e vídeos
+
+  - GPS (Geolocalização)
+    - react-native-geolocation-service
+    - Coordenadas em tempo real
+    - Permissões Android/iOS
+
+  - Sensores
+    - Acelerômetro
+    - Giroscópio
+    - Magnetômetro
+
+  - Funcionamento
+    - Bridge (Ponte) entre JS e Nativo
+    - Módulos pré-construídos
+
+- Projeto Prático: Scanner QR
+  - Tecnologias
+    - Vision Camera (Scanner)
+    - AsyncStorage (Storage offline)
+
+  - Configuração Android
+    - AndroidManifest (Permissões)
+    - gradle.properties (Build)
+
+  - Configuração iOS
+    - Info.plist (Mensagens de uso)
+
+- Critérios de Escolha
+  - Popularidade da comunidade
+  - Compatibilidade com versão RN
+  - Qualidade da documentação
+  - Necessidade real de dependência
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18.12"></script>
+</body>
+</html>

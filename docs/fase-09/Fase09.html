@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Desenvolvimento de Aplicações Móveis e Animação</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .markmap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .markmap > svg {
+      width: 100%;
+      height: 100vh;
+      display: block;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="markmap">
+    <script type="text/template">
+---
+markmap:
+  initialExpandLevel: 3
+---
+
+# Fase 09
+## Desenvolvimento de Aplicações Móveis e Animação
+
+- Animação (After Effects)
+  - Keyframes
+    - Pontos de ancoragem
+    - Controle de tempo e valor
+    - Velocidade e distância
+  - Tipos de Interpolação
+    - Linear (Diamante)
+    - Easy Ease (F9)
+    - Ease In (Shift+F9)
+    - Ease Out (Ctrl+Shift+F9)
+    - Hold (Estático)
+  - Propriedades Animáveis
+    - Transformação: Posição, Escala, Rotação, Opacidade
+    - Máscaras: Geométricas e Orgânicas (Caneta)
+    - Efeitos e Texto
+    - Gráfico de Velocidade
+
+- Persistência de Dados (React Native)
+  - AsyncStorage
+    - Chave-Valor local
+    - Operações Assíncronas
+    - Métodos: setItem, getItem, removeItem
+  - Firebase Firestore
+    - NoSQL na nuvem
+    - Sincronização em tempo real
+    - Suporte Offline
+
+- Recursos Nativos
+  - Hardware
+    - Câmera (Vision Camera / Expo)
+    - GPS (Geolocation Service)
+    - Sensores: Acelerômetro, Giroscópio
+  - Arquitetura
+    - Bridge (Ponte) JS-Nativo
+    - Permissões: AndroidManifest e Info.plist
+
+- Autenticação e Segurança
+  - Métodos
+    - E-mail e Senha
+    - Login Social (Google, Apple)
+    - Biometria
+  - Protocolos e Tokens
+    - JWT (Header, Payload, Signature)
+    - Refresh Tokens
+    - MFA (Multifator)
+  - Boas Práticas
+    - HTTPS/Criptografia
+    - SecureStore para dados sensíveis
+    - Validação no Backend
+    - Logout Seguro (Remover tokens)
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18.12"></script>
+</body>
+</html>

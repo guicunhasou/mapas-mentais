@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 - Projeto ReUse! (Fase 3)</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #111111;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #mindmap {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+
+    .markmap > svg {
+      width: 100%;
+      height: 100%;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+
+  <script type="module">
+    import { Markmap, loadCSS, loadJS } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.17.6/+esm';
+    import { Transformer } from 'https://cdn.jsdelivr.net/npm/markmap-lib@0.17.6/+esm';
+
+    const markdown = String.raw`---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 1
+## Projeto ReUse! (Fase 3)
+
+- Modelo de Negócio (Business Model Canvas)
+  - Proposta de valor
+  - Segmento de clientes
+  - Canais de distribuição
+  - Fontes de receita
+  - Parcerias-chave
+- Identidade Visual e Design
+  - Adobe After Effects
+  - Looping e ciclo de animação
+  - Tipografia em movimento
+  - Vídeos promocionais
+- Desenvolvimento Mobile
+  - Conexão com APIs externas
+  - Cache local e otimização
+  - Gerenciamento de autenticação
+  - Testes e depuração
+  - Manutenção e atualizações
+  - Deploy e publicação
+- Consultoria Master 3
+  - Esteves Jobs (Negócios)
+  - Rosa Colores (Design)
+  - Equipe Técnica (Desenvolvimento)
+- Objetivos Finais
+  - Sustentabilidade e escalabilidade
+  - Consumo sustentável
+  - Impacto na comunidade
+`;
+
+    const transformer = new Transformer();
+    const { root, features } = transformer.transform(markdown);
+    const { styles, scripts } = transformer.getUsedAssets(features);
+
+    if (styles?.length) loadCSS(styles);
+    if (scripts?.length) await loadJS(scripts);
+
+    Markmap.create('#mindmap', {
+      autoFit: true,
+      initialExpandLevel: 3,
+      maxWidth: 320,
+      paddingX: 16
+    }, root);
+  </script>
+</body>
+</html>

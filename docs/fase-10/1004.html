@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>4 - As Voltas de uma Animação</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #111;
+      font-family: sans-serif;
+    }
+    #mindmap {
+      width: 100vw;
+      height: 100vh;
+    }
+    .markmap > svg {
+      width: 100%;
+      height: 100%;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+
+  <script type="module">
+    import { Markmap } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.17.4/+esm';
+    import { Transformer } from 'https://cdn.jsdelivr.net/npm/markmap-lib@0.17.4/+esm';
+
+    const markdown = `---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 4
+## As Voltas de uma Animação
+
+- Conceito de Loop
+  - Definição: Repetição contínua de sequência animada
+  - Objetivos: Feedback visual, carregamento e dinamismo
+  - Exemplos: Spinners, barras de progresso e botões pulsantes
+- Animação no After Effects
+  - Configurações Básicas
+    - Ferramenta Shape Layer (Ellipse Tool)
+    - Centralizar Anchor Point (CTRL+ALT+HOME)
+    - Suavização de Keyframes (F9)
+    - Editor gráfico de velocidade
+  - Expressões (JavaScript)
+    - Ativação: Tecla ALT + ícone de timer
+    - Caminho: Property > loopOut
+    - Automatização sem keyframes manuais
+- Tipos de loopOut()
+  - cycle: Repete do início ao fim
+  - pingpong: Movimento de ida e volta
+  - continue: Mantém velocidade do último keyframe
+  - offset: Repete a partir do valor final
+- Prática: Ícone de Carregamento
+  - Efeito Trim Paths (Aparar Caminhos)
+  - Criação do símbolo do infinito
+  - Uso de Pré-composições
+  - Refinamento Visual
+    - Efeito 4-Color Gradient
+    - Efeito Glow (Brilho)
+    - Ajustes de Stroke Width
+- Importância na UX
+  - Percepção de menor tempo de espera
+  - Indicação de sistema ativo
+  - Profissionalismo e acessibilidade
+`;
+
+    const transformer = new Transformer();
+    const { root } = transformer.transform(markdown);
+    Markmap.create(document.querySelector('#mindmap'), null, root);
+  </script>
+</body>
+</html>

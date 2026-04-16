@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 - Modelos de Negócios</title>
+  <style>
+    html, body {
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      background: #111111;
+      overflow: hidden;
+      font-family: Arial, sans-serif;
+    }
+
+    #mindmap {
+      width: 100vw;
+      height: 100vh;
+      display: block;
+    }
+
+    .markmap > svg {
+      width: 100%;
+      height: 100%;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <svg id="mindmap"></svg>
+
+  <script type="module">
+    import { Markmap, loadCSS, loadJS } from 'https://cdn.jsdelivr.net/npm/markmap-view@0.17.6/+esm';
+    import { Transformer } from 'https://cdn.jsdelivr.net/npm/markmap-lib@0.17.6/+esm';
+
+    const markdown = String.raw`---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 3
+## Modelos de Negócios
+
+- Advertising (Propaganda)
+  - Foco: Vitrine para terceiros
+  - Exemplos: Google Ads, Facebook, Instagram
+  - Pontos Fortes: Baixa complexidade, segmentação
+  - Pontos Fracos: Saturação, AdBlocks, retenção necessária
+- Commerce (Comércio)
+  - B2B (Business to Business)
+    - Marketplace: Conecta empresas (ex: Amazon Business)
+    - Sites de Catálogo: Listagem digital (ex: Kalunga)
+    - Pontos Fortes: Escala, Cauda Longa
+    - Pontos Fracos: Logística, frete, segurança
+  - B2C (Business to Client)
+    - Venda Direta: Transação simples empresa-cliente
+    - Subscrição: Assinatura recorrente (ex: Hunch Box)
+    - Marketplace: Facilitação e C2C (ex: Airbnb)
+    - Desafios: By-pass, fidelização, criação de valor
+- Subscrição Digital
+  - Serviços SaaS e Streaming
+  - Exemplos: Netflix, Spotify, iCloud
+  - Pontos Fortes: Previsibilidade, Valuation alto
+  - Pontos Fracos: Necessidade de atualização constante
+- Modelos Mobile
+  - Premium Apps
+    - Cobrança por download (ex: 1 Second Everyday)
+    - Foco: Nichos e alta qualidade
+  - Free com Ads
+    - Gratuito para usuário, lucro via anúncios
+    - Exemplo: Angry Birds
+  - Freemium
+    - Misto: Funcionalidades grátis e pagas
+    - Exemplo: Spotify Premium
+  - In App Purchase (IAP)
+    - Venda de itens virtuais/benefícios
+    - Exemplo: Witch Puzzle
+- Ferramentas de Apoio
+  - Business Model Canvas
+  - Livro: Inovação em Modelos de Negócios (Osterwalder)
+`;
+
+    const transformer = new Transformer();
+    const { root, features } = transformer.transform(markdown);
+    const { styles, scripts } = transformer.getUsedAssets(features);
+
+    if (styles?.length) loadCSS(styles);
+    if (scripts?.length) await loadJS(scripts);
+
+    Markmap.create('#mindmap', {
+      autoFit: true,
+      initialExpandLevel: 3,
+      maxWidth: 320,
+      paddingX: 16
+    }, root);
+  </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>6 - Otimizando o Mobile</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      background: #0b0b0b;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .markmap {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+    }
+    .markmap > svg {
+      width: 100%;
+      height: 100vh;
+      display: block;
+      background: #ebebeb;
+    }
+  </style>
+</head>
+<body>
+  <div class="markmap">
+    <script type="text/template">
+---
+markmap:
+  initialExpandLevel: 3
+---
+
+# 1006
+## Otimizando o Mobile
+
+- Fatores de Performance
+  - Tamanho da Aplicação
+  - Renderizações Desnecessárias
+  - Manipulação de Imagens
+  - Gerenciamento de Estado
+  - Gestão de Recursos do Dispositivo
+- Técnicas de Otimização
+  - Lazy Loading
+  - Compressão de Imagens
+  - Otimização de Listas e Eventos
+  - Hooks useMemo e useCallback
+- Gestão de Memória
+  - Evitar acúmulo de estados
+  - Uso seletivo de Context API
+  - Limpeza com useEffect
+- Ferramentas (Dev Tools)
+  - Flipper
+  - React Developer Tools
+  - Inspector e Console
+  - Network e Performance
+  - Memory e Storage
+- Boas Práticas de Coding
+  - Minimizar loops repetitivos
+  - Reduzir componentes aninhados
+  - Uso de React.memo
+  - Evitar dependências pesadas
+- Animações e Transições
+  - React-native-reanimated
+  - Execução na thread nativa
+  - Animações baseadas em GPU
+  - Desativar animações fora da viewport
+- Consumo de Bateria
+  - Limitar GPS e Sensores
+  - Otimizar Notificações Push
+  - Monitoramento (Profiler/Instruments)
+- Rede e Conexões
+  - Caching Local (AsyncStorage)
+  - Gerenciar Erros de Rede (NetInfo)
+  - Requisições Paralelas (Promise.all)
+    </script>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader@0.18.12"></script>
+</body>
+</html>
